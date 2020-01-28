@@ -1,0 +1,17 @@
+Man ska kunna:
+
+Ladda upp data,
+Läsa andras uppladdade data,
+
+Idéer:
+
+Dela sin favoritmusik, kategoriserat i artister > låtar, varje låt har en länk till spotify som man som uppladdare bifogar.
+(Musikspelare på sidan? Spotify API?)
+Kanske en sida där man kan ladda upp egna låtar som man själv producerat för folk att kika på?
+Kommentar fält för varje låt där man kan lämna sina tankar.
+
+Databas struktur:
+
+[Cluster0]
+Artister > Låtar > Uppladdad av > Timestamp
+

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container form-container">
+    <div class="row">
+        <form class="col s12" action="{{ url_for('insert_song') }}" method="POST">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Artists name" id="form_artist" name="form_artist" type="text" class="validate">
+                    <label for="form_artist">Artist</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Song name" id="form_song" name="form_song" type="text" class="validate">
+                    <label for="form_song">Song</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Enter genre" id="form_genre" name="form_genre" type="text" class="validate">
+                    <label for="form_genre">Genre</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Spotify link (If possible)" id="form_link" name="form_link" type="text" class="validate">
+                    <label for="form_link">Spotify link</label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light" id="submit_button" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
