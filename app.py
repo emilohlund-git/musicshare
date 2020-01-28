@@ -24,5 +24,9 @@ def insert_song():
     songs.insert_one(request.form.to_dict())
     return redirect(url_for('home_page'))
 
+@app.route('/tutorial')
+def tutorial():
+    return render_template('tutorial.html')
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=os.environ.get('PORT'), debug=True)

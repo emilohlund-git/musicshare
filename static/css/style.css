@@ -31,6 +31,20 @@ body {
   position: relative;
 }
 
+.tutorial-title,
+.tutorial-description {
+  color: #fff;
+}
+
+#next-button,
+#prev-button {
+  background-color: #fff;
+}
+
+#breadcrumb-list {
+  color: #fff !important;
+}
+
 .hero-title,
 .hero-sub-title {
   width: 100%;
@@ -46,8 +60,8 @@ body {
 }
 
 .brand-logo {
-    margin-left: 25px;
-    font-weight: 700;
+  margin-left: 25px;
+  font-weight: 700;
 }
 
 #submit_button {
@@ -99,6 +113,21 @@ nav form {
   background: #f7f7f7;
 }
 
+.pagination {
+  padding-bottom: 35px;
+  padding-top: 35px;
+}
+
+.tutorial-title {
+  text-transform: uppercase;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.tutorial-description {
+  margin-bottom: 35px;
+}
+
 input.search-field {
   font-weight: 500;
   color: rgba(0, 0, 0, 0.54);
@@ -113,7 +142,7 @@ input.search-field {
 }
 
 #search-form {
-    margin-right: 25px;
+  margin-right: 25px;
 }
 
 input.search-field:hover {
