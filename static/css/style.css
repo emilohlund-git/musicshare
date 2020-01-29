@@ -9,12 +9,39 @@ body {
   height: 100%;
 }
 
+input,
+input::placeholder {
+  color: #fff;
+}
+
+/* label color */
+.input-field input[type='text'] + label {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* label color */
+.input-field input[type='password'] + label {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* label color */
+.input-field input[type='email'] + label {
+  color: #fff !important;
+  font-weight: 600;
+}
+
 .hero {
   width: 100%;
   height: 100%;
   min-width: 100%;
   min-height: 100%;
   position: relative;
+}
+
+.collapsible {
+  overflow-y: hidden;
 }
 
 .flex-center {
@@ -34,6 +61,10 @@ body {
 .tutorial-title,
 .tutorial-description {
   color: #fff;
+}
+
+.collapsible-body {
+  background-color: #fff;
 }
 
 #next-button,
@@ -64,10 +95,103 @@ body {
   font-weight: 700;
 }
 
+/* to get ride of the yellow color in chrome*/
+input[type]:-webkit-autofill,
+input[type]:-webkit-autofill:hover,
+input[type]:-webkit-autofill:focus,
+input[type]:-webkit-autofill:active {
+  transition: background-color 5500s ease-in-out 0s;
+  -webkit-box-shadow: inset 0 0 0 500px transparent;
+}
+
+.input-field
+  > input[type]:-webkit-autofill:not(.browser-default):not([type='search'])
+  + label,
+.input-field > input[type='date']:not(.browser-default) + label,
+.input-field > input[type='time']:not(.browser-default) + label {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* Materialize fix labels overlapping */
+input[type]:-webkit-autofill + label {
+  -webkit-transform: translateY(-140%);
+  transform: translateY(-140%);
+}
+
+/* fix clicking label does not activate text input */
+.input-field label {
+  pointer-events: all;
+}
+
+/* label underline focus color */
+.input-field input[type='text']:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(37, 37, 37);
+}
+
+table,
+tr td {
+}
+tbody {
+  display: block;
+  height: 500px;
+  overflow: auto;
+}
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+thead {
+  width: calc(100% - 1em);
+}
+
+#form-artist-strong {
+  font-weight: 700;
+  font-size: 24px;
+  color: #fff;
+}
+
+#dash {
+  font-weight: 1000;
+  color: #fff;
+}
+
+#form-genre-span {
+  color: #fff;
+}
+
+#form-song-span {
+  color: #fff;
+}
+
+.text-white {
+  color: #fff;
+}
+
 #submit_button {
   color: #fff;
   background-color: rgb(31, 31, 31);
   font-weight: 700;
+  margin-left: 10px;
 }
 
 .form-container {

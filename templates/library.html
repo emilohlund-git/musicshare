@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="hero flex-center"
+    style="background-image:url({{ url_for('static', filename='img/black-microphone-3531990.jpg') }}); background-size: cover;">
+    <div class="container">
+        <div class="responsive-table table-status-sheet">
+            <table class="bordered">
+                <thead>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for song in songs %}
+                    <tr>
+                        <td>
+                            <i class="material-icons text-white">audiotrack</i>
+                            <strong id="form-artist-strong">{{song.form_artist}}</strong>
+                        </td>
+                        <td>
+                            <span id="form-song-span">{{song.form_song}}</span>
+                        </td>
+                        <td>
+                            <span id="form-genre-span">{{song.form_genre}}</span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="text" class="validate">
+                    <label for="email">Filter</label>
+                    <span class="helper-text" data-error="wrong">Narrow down your list with the filter!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

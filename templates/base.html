@@ -37,10 +37,11 @@
                             </div>
                         </form>
                     </li>
-                    <li><a href="{{ url_for('add_song') }}"><i class="material-icons"
-                                id="music-add">library_add</i></a></li>
-                    <li><a href="collapsible.html"><i class="material-icons" id="music-library">library_music</i></a></li>
-                    <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+                    <li><a href="{{ url_for('add_song') }}"><i class="material-icons" id="music-add">library_add</i></a>
+                    </li>
+                    <li><a href="{{ url_for('library') }}"><i class="material-icons"
+                                id="music-library">library_music</i></a></li>
+                    <li><a href="{{ url_for('register') }}"><i class="material-icons">home</i></a></li>
                 </ul>
                 <ul class="sidenav" id="mobile-demo">
                     <li><a href="sass.html">Sass</a></li>
