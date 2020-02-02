@@ -8,7 +8,8 @@ app = Flask(__name__, static_url_path='/static')
 password = os.getenv('MY_PASSWORD')
 
 app.config["MONGO_DBNAME"] = "MusicProject"
-app.config["MONGO_URI"] = "mongodb+srv://Emil:{}@cluster0-hhlkk.mongodb.net/musicproject?retryWrites=true&w=majority".format(password)
+app.config["MONGO_URI"] = "mongodb+srv://Emil:{}@cluster0-hhlkk.mongodb.net/musicproject?retryWrites=true&w=majority".format(
+    password)
 
 mongo = PyMongo(app)
 
@@ -38,21 +39,6 @@ def tutorial():
 @app.route('/library')
 def library():
     return render_template('library.html', songs=mongo.db.songs.find())
-
-
-@app.route('/register')
-def register():
-    return render_template('register.html')
-
-
-@app.route('/adduser', methods=['POST'])
-def adduser():
-    new_user = request.form['username']
-    if mongo.db.users.find_one({"username": new_user}):
-        return render_template('wrong.html')
-    else:
-        return render_template('welcome.html')
-
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=os.environ.get('PORT'), debug=True)

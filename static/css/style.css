@@ -187,6 +187,10 @@ thead {
   color: #fff;
 }
 
+.fix-offset {
+  margin-left: 10px;
+}
+
 #submit_button {
   color: #fff;
   background-color: rgb(31, 31, 31);

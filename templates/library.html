@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="hero flex-center"
-    style="background-image:url({{ url_for('static', filename='img/black-microphone-3531990.jpg') }}); background-size: cover;">
+    style="background-image:url({{ url_for('static', filename='img/orange-background.jpg') }}); background-size: cover;">
     <div class="container">
         <div class="responsive-table table-status-sheet">
-            <table class="bordered">
+            <table class="bordered" id="library-table">
                 <thead>
                     <tr>
                     </tr>
@@ -22,6 +22,9 @@
                         <td>
                             <span id="form-genre-span">{{song.form_genre}}</span>
                         </td>
+                        <td>
+                            <a target="_blank" href="{{song.form_link}}" id="form-genre-span">Click here to open with Spotify!</a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -30,12 +33,13 @@
         <div class="container">
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email" type="text" class="validate">
-                    <label for="email">Filter</label>
+                    <input id="filter" type="text" class="validate">
+                    <label for="email">Filter by artist</label>
                     <span class="helper-text" data-error="wrong">Narrow down your list with the filter!</span>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
 {% endblock %}

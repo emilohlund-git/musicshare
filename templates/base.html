@@ -17,37 +17,10 @@
             <div class="nav-wrapper">
                 <a href="{{ url_for('home_page') }}" class="brand-logo">MUSICSHARE</a>
                 <ul class="right hide-on-med-and-down">
-                    <li>
-                        <form id="search-form" action="" class="browser-default right">
-                            <input id="search-input" placeholder="Search" type="text"
-                                class="browser-default search-field" name="q" value="" autocomplete="off"
-                                aria-label="Search box">
-                            <label for="search-input"><i class="material-icons search-icon">search</i></label>
-                            <i class="material-icons search-close-icon">cancel</i>
-                            <div class="search-popup">
-                                <div class="search-content">
-                                    <label class="search-heading">Most Visited</label>
-                                    <ul class="popup-list">
-                                        <li class=""><a class="grey-text" href="#">Google</a></li>
-                                        <li class=""><a class="grey-text" href="#">Apple</a></li>
-                                        <li class=""><a class="grey-text" href="#">Microsoft</a></li>
-                                        <li class=""><a class="grey-text" href="#">Github</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </form>
-                    </li>
                     <li><a href="{{ url_for('add_song') }}"><i class="material-icons" id="music-add">library_add</i></a>
                     </li>
                     <li><a href="{{ url_for('library') }}"><i class="material-icons"
                                 id="music-library">library_music</i></a></li>
-                    <li><a href="{{ url_for('register') }}"><i class="material-icons">home</i></a></li>
-                </ul>
-                <ul class="sidenav" id="mobile-demo">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
                 </ul>
             </div>
         </nav>

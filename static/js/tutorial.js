@@ -8,11 +8,10 @@ const breadcrumb_items = [
   document.getElementById("1"),
   document.getElementById("2"),
   document.getElementById("3"),
-  document.getElementById("4")
 ];
 
 next_button.addEventListener("click", function() {
-  if (current_page < 4) {
+  if (current_page < 3) {
     current_page++;
   }
   change_page();
@@ -60,22 +59,10 @@ function change_page() {
 
       break;
     case 3:
-      document.getElementById("music-library").style.color = "white";
       breadcrumb_items.forEach(function(item) {
         item.classList.remove("active");
       });
       breadcrumb_items[2].classList.add("active");
-
-      title.innerHTML = current_page + ". Search through all our music!";
-      description.innerHTML =
-        "You can use the search box above to find anything on the website.";
-
-      break;
-    case 4:
-      breadcrumb_items.forEach(function(item) {
-        item.classList.remove("active");
-      });
-      breadcrumb_items[3].classList.add("active");
 
       title.innerHTML = current_page + ". Simple as that, now go try it out!";
       description.innerHTML = "";
@@ -85,7 +72,7 @@ function change_page() {
       break;
   }
 
-  if (current_page < 4) {
+  if (current_page < 3) {
     next_button.classList.remove("disabled");
     next_button.classList.add("waves-effect");
   }
