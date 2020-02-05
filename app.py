@@ -5,7 +5,7 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__, static_url_path='/static')
 
-password = os.getenv('MY_PASSWORD')
+password = os.environ.get('MY_PASSWORD')
 
 app.config["MONGO_DBNAME"] = "MusicProject"
 app.config["MONGO_URI"] = "mongodb+srv://Emil:{}@cluster0-hhlkk.mongodb.net/musicproject?retryWrites=true&w=majority".format(
