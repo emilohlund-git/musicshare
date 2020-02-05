@@ -9,6 +9,8 @@ body {
   height: 100%;
 }
 
+/* INPUT CUSTOMIZATION */
+
 input,
 input::placeholder {
   color: #fff;
@@ -31,6 +33,43 @@ input::placeholder {
   color: #fff !important;
   font-weight: 600;
 }
+
+/* to get ride of the yellow color in chrome*/
+input[type]:-webkit-autofill,
+input[type]:-webkit-autofill:hover,
+input[type]:-webkit-autofill:focus,
+input[type]:-webkit-autofill:active {
+  transition: background-color 5500s ease-in-out 0s;
+  -webkit-box-shadow: inset 0 0 0 500px transparent;
+}
+
+.input-field
+  > input[type]:-webkit-autofill:not(.browser-default):not([type='search'])
+  + label,
+.input-field > input[type='date']:not(.browser-default) + label,
+.input-field > input[type='time']:not(.browser-default) + label {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* Materialize fix labels overlapping */
+input[type]:-webkit-autofill + label {
+  -webkit-transform: translateY(-140%);
+  transform: translateY(-140%);
+}
+
+/* fix clicking label does not activate text input */
+.input-field label {
+  pointer-events: all;
+}
+
+/* label underline focus color */
+.input-field input[type='text']:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+/* HERO SECTION */
 
 .hero {
   width: 100%;
@@ -95,41 +134,6 @@ input::placeholder {
   font-weight: 700;
 }
 
-/* to get ride of the yellow color in chrome*/
-input[type]:-webkit-autofill,
-input[type]:-webkit-autofill:hover,
-input[type]:-webkit-autofill:focus,
-input[type]:-webkit-autofill:active {
-  transition: background-color 5500s ease-in-out 0s;
-  -webkit-box-shadow: inset 0 0 0 500px transparent;
-}
-
-.input-field
-  > input[type]:-webkit-autofill:not(.browser-default):not([type='search'])
-  + label,
-.input-field > input[type='date']:not(.browser-default) + label,
-.input-field > input[type='time']:not(.browser-default) + label {
-  font-weight: 700;
-  font-size: 15px;
-}
-
-/* Materialize fix labels overlapping */
-input[type]:-webkit-autofill + label {
-  -webkit-transform: translateY(-140%);
-  transform: translateY(-140%);
-}
-
-/* fix clicking label does not activate text input */
-.input-field label {
-  pointer-events: all;
-}
-
-/* label underline focus color */
-.input-field input[type='text']:focus {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
-}
-
 /* SCROLLBAR */
 /* width */
 ::-webkit-scrollbar {
@@ -145,6 +149,8 @@ input[type]:-webkit-autofill + label {
 ::-webkit-scrollbar-thumb {
   background: rgb(37, 37, 37);
 }
+
+/* TABLE STYLING */
 
 table,
 tr td {
@@ -273,62 +279,11 @@ input.search-field {
   margin-right: 25px;
 }
 
-input.search-field:hover {
-  background: #ebebeb;
-}
-.searchbox {
-  position: relative;
-}
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgba(0, 0, 0, 0.54);
 }
-input.search-field:focus {
-  outline: none;
-  width: 500px;
-  color: #212121;
-}
-input.search-field:focus:hover {
-  background: #f7f7f7;
-}
-.search-icon {
-  position: absolute;
-  top: 0;
-  padding-left: 20px;
-  color: rgba(0, 0, 0, 0.54);
-}
-.search-content {
-  color: #303c42;
-  width: 90%;
-  margin: auto;
-  height: auto;
-  padding: 8px 10px;
-}
-.search-heading {
-  color: #757575;
-  display: block;
-  font-size: 12px;
-  line-height: 30px;
-}
-input.search-field ~ .search-popup {
-  overflow: hidden;
-  left: 0px;
-  min-height: 50px;
-  max-height: 700px;
-  width: 200px;
-  top: -450px;
-  position: absolute;
-  z-index: 1;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-  transition: width 0.2s, top 0.2s ease-in-out;
-  border-radius: 2px;
-  background-color: #fff;
-}
-input.search-field:focus ~ .search-popup {
-  width: 500px;
-  top: 50px;
-}
+
 nav ul.popup-list a:hover {
   background-color: initial;
 }

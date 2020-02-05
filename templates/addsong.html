@@ -8,27 +8,27 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="Artists name" id="form_artist" name="form_artist" type="text"
-                            class="validate">
+                            class="validate" required>
                         <label for="form_artist">Artist</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Song name" id="form_song" name="form_song" type="text" class="validate">
+                        <input placeholder="Song name" id="form_song" name="form_song" type="text" class="validate" required>
                         <label for="form_song">Song</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Enter genre" id="form_genre" name="form_genre" type="text" class="validate">
+                        <input placeholder="Enter genre" id="form_genre" name="form_genre" type="text" class="validate" required>
                         <label for="form_genre">Genre</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Spotify link (If possible)" id="form_link" name="form_link" type="text"
-                            class="validate">
-                        <label for="form_link">Spotify link</label>
+                        <input placeholder="Spotify / Youtube link" id="form_link" name="form_link" type="text"
+                            class="validate" required>
+                        <label for="form_link">Song Link</label>
                     </div>
                 </div>
                 <div class="row">
@@ -40,4 +40,9 @@
         </div>
     </div>
 </div>
+<script>
+    // Showcasing that we are on this page by changing the color of the respective button in the navbar on pageload
+    document.getElementById("music-library").style.color = "white";
+    document.getElementById("music-add").style.color = "orange";
+</script>
 {% endblock %}

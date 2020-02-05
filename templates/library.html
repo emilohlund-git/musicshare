@@ -23,7 +23,17 @@
                             <span id="form-genre-span">{{song.form_genre}}</span>
                         </td>
                         <td>
-                            <a target="_blank" href="{{song.form_link}}" id="form-genre-span">Click here to open with Spotify!</a>
+                            {% if 'spotify' in song.form_link %}
+                            <a target="_blank" href="{{song.form_link}}" id="form-genre-span"><img
+                                    src="{{ url_for('static', filename='img/spotify-icon.png') }}"
+                                    style="width: 25px; height: 25px;">Open in Spotify!</a>
+                            {% elif 'youtube' in song.form_link %}
+                            <a target="_blank" href="{{song.form_link}}" id="form-genre-span"><img
+                                src="{{ url_for('static', filename='img/youtube-icon.png') }}"
+                                style="width: 20px; height: 20px;"> Play with Youtube!</a>
+                            {% else %}
+                            <a target="_blank" href="{{song.form_link}}" id="form-genre-span"></a>
+                            {% endif %}
                         </td>
                     </tr>
                     {% endfor %}
@@ -41,5 +51,10 @@
         </div>
     </div>
 </div>
+<script>
+    // Showcasing that we are on this page by changing the color of the respective button in the navbar on pageload
+    document.getElementById("music-add").style.color = "white";
+    document.getElementById("music-library").style.color = "orange";
+</script>
 <script src="{{ url_for('static', filename='js/filter.js') }}"></script>
 {% endblock %}

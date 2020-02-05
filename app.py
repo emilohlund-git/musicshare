@@ -28,7 +28,7 @@ def add_song():
 def insert_song():
     songs = mongo.db.songs
     songs.insert_one(request.form.to_dict())
-    return redirect(url_for('home_page'))
+    return redirect(url_for('library'))
 
 
 @app.route('/tutorial')
