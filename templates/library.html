@@ -4,7 +4,7 @@
     style="background-image:url({{ url_for('static', filename='img/orange-background.jpg') }}); background-size: cover;">
     <div class="container">
         <div class="responsive-table table-status-sheet">
-            <table class="bordered" id="library-table">
+            <table class="bordered z-depth-0" id="library-table">
                 <thead>
                     <tr>
                     </tr>
@@ -13,27 +13,35 @@
                     {% for song in songs %}
                     <tr>
                         <td>
-                            <i class="material-icons text-white">audiotrack</i>
-                            <strong id="form-artist-strong">{{song.form_artist}}</strong>
-                        </td>
-                        <td>
-                            <span id="form-song-span">{{song.form_song}}</span>
-                        </td>
-                        <td>
-                            <span id="form-genre-span">{{song.form_genre}}</span>
-                        </td>
-                        <td>
-                            {% if 'spotify' in song.form_link %}
-                            <a target="_blank" href="{{song.form_link}}" id="form-genre-span"><img
-                                    src="{{ url_for('static', filename='img/spotify-icon.png') }}"
-                                    style="width: 25px; height: 25px;">Open in Spotify!</a>
-                            {% elif 'youtube' in song.form_link %}
-                            <a target="_blank" href="{{song.form_link}}" id="form-genre-span"><img
-                                src="{{ url_for('static', filename='img/youtube-icon.png') }}"
-                                style="width: 20px; height: 20px;"> Play with Youtube!</a>
-                            {% else %}
-                            <a target="_blank" href="{{song.form_link}}" id="form-genre-span"></a>
-                            {% endif %}
+                            <ul class="collapsible">
+                                <li>
+                                    <div class="collapsible-header">
+                                        <strong id="form-artist-strong" class="left-align"><span class="new badge"
+                                                data-badge-caption="likes" id="likes">{{song.likes}}</span> {{song.form_artist}} -
+                                            <span id="form-song-span"
+                                                class="right-align">{{song.form_song}}</span></strong>
+                                    </div>
+                                    <div class="collapsible-body">
+                                        <a href="{{ url_for('addlike', song_id=song._id) }}"><i
+                                                class="material-icons text-white thumb">thumb_up</i></a>
+                                        <a href="{{ url_for('dislike', song_id=song._id) }}"><i
+                                                class="material-icons text-white thumb right-margin">thumb_down</i></a>
+                                        <span class="hide">{{song.form_genre}}</span>
+                                        {% if 'spotify' in song.form_link %}
+                                        <a target="_blank" href="{{song.form_link}}" id="form-genre-span"><img
+                                                src="{{ url_for('static', filename='img/spotify-icon.png') }}"
+                                                style="width: 25px; height: 25px;">Open in Spotify!</a>
+                                        {% elif 'youtube' in song.form_link %}
+                                        <a target="_blank" href="{{song.form_link}}" id="form-genre-span"><img
+                                                src="{{ url_for('static', filename='img/youtube-icon.png') }}"
+                                                style="width: 20px; height: 20px; margin-left: 2px"> Play with
+                                            Youtube!</a>
+                                        {% else %}
+                                        <a target="_blank" href="{{song.form_link}}" id="form-genre-span"></a>
+                                        {% endif %}
+                                    </div>
+                                </li>
+                            </ul>
                         </td>
                     </tr>
                     {% endfor %}
@@ -55,6 +63,43 @@
     // Showcasing that we are on this page by changing the color of the respective button in the navbar on pageload
     document.getElementById("music-add").style.color = "white";
     document.getElementById("music-library").style.color = "orange";
+
+    sortTable();
+    // Sorting the table by likes
+    function sortTable() {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("library-table");
+        switching = true;
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /* Loop through all table rows (except the
+            first, which contains table headers): */
+            for (i = 1; i < (rows.length - 1); i++) {
+                // Start by saying there should be no switching:
+                shouldSwitch = false;
+                /* Get the two elements you want to compare,
+                one from current row and one from the next: */
+                x = rows[i].getElementsByTagName("TD")[0];
+                y = rows[i + 1].getElementsByTagName("TD")[0];
+                // Check if the two rows should switch place:
+                if (x.getElementsByTagName("span")[0].innerHTML < y.getElementsByTagName("span")[0].innerHTML) {
+                    // If so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark that a switch has been done: */
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+        }
+    }
 </script>
 <script src="{{ url_for('static', filename='js/filter.js') }}"></script>
 {% endblock %}

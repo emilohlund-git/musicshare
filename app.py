@@ -5,7 +5,7 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__, static_url_path='/static')
 
-password = os.environ.get('MY_PASSWORD')
+password = os.getenv('MY_PASSWORD')
 
 app.config["MONGO_DBNAME"] = "MusicProject"
 app.config["MONGO_URI"] = "mongodb+srv://Emil:{}@cluster0-hhlkk.mongodb.net/musicproject?retryWrites=true&w=majority".format(
@@ -39,6 +39,20 @@ def tutorial():
 @app.route('/library')
 def library():
     return render_template('library.html', songs=mongo.db.songs.find())
+
+
+@app.route('/addlike/<song_id>')
+def addlike(song_id):
+    songs = mongo.db.songs
+    songs.update_one({'_id': ObjectId(song_id)}, {'$inc': {'likes': 1}})
+    return redirect(url_for('library'))
+
+@app.route('/dislike/<song_id>')
+def dislike(song_id):
+    songs = mongo.db.songs
+    songs.update_one({'_id': ObjectId(song_id)}, {'$inc': {'likes': -1}})
+    return redirect(url_for('library'))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=os.environ.get('PORT'), debug=True)
