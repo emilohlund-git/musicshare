@@ -1,4 +1,4 @@
-# MUSICSHARE #
+![Logo](https://github.com/emilohlund-git/musicshare/blob/master/Musicshare.JPG)
 Musicshare is a platform where you can add your favourite songs to a library, where other users can see your contributions and up or downvote the songs. The songs in the library gets sorted by the amount of likes they have. 
 
 ## UX ##
@@ -18,12 +18,29 @@ And with that include a points system, the more likes your songs have, the more 
 Something that gives the page more interactivity than it currently has.
 
 ## Technologies used ##
-I'm using Materialize as the grid system for my website, aswell as it's components. It's a clean and nice looking base to go off I think.
+- Flask
+- PyMongo
+- Python
+- HTML
+- CSS
+
+I'm using [Materialize](https://materializecss.com/) as the grid system for my website, aswell as it's components. It's a clean and nice looking base to go off I think.
 Connecting to the database using PyMongo to MongoDB.
 Otherwise it's standard CSS & Javascript
 
 ## Testing ##
- 
+I've used [Google Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) to see if there's any errors in my JavaScript code as I've been adding features. Aswell as manually going through the elements I'm targetting to see if it's working as intended. 
 
-Background image provided by Pexels.com [https://www.pexels.com/@shottrotter]
-Hosting images on the website at Imgbb.com [https://sv.imgbb.com/]
+There was a rendering issue with the table on the library page, which you can reach using this button in the navigation bar:
+![Librarybutton](https://github.com/emilohlund-git/musicshare/blob/master/Librarybutton.JPG)
+Basically the lines seperating the table-cells would duplicate and stick on the screen whenever clicking on a cell in the table to open it. This problem occured when I was using the popout collapsibles by Materialize, I had to change it to the normal extendable collapsibles in order for the issue to be removed.
+
+## Credits ##
+### Media ###
+I'm using the following images taken from Pexels.com [https://www.pexels.com/].
+- From Tom Swinnen on Pexels.com (https://www.pexels.com/photo/white-earphones-beside-orange-music-player-3194469/)
+- From Soonios Pro on Pexels.com (https://www.pexels.com/photo/black-microphone-3531990/)
+The third blank image I'm using on the 'add song' and 'library' page off the website is basically the second picture with the microphone cut off only using the orange gradient colours.
+
+Rest is icons from Materialize which can all be found here (https://materializecss.com/icons.html)
+Hosting images on the website at [Imgbb.com](https://sv.imgbb.com/)
