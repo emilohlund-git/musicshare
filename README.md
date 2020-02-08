@@ -32,7 +32,7 @@ Otherwise it's standard CSS & Javascript
 I've used [Google Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) to see if there's any errors in my JavaScript code as I've been adding features. Aswell as manually going through the elements I'm targetting to see if it's working as intended. 
 
 There was a rendering issue with the table on the library page, which you can reach using this button in the navigation bar:
-![Librarybutton](https://github.com/emilohlund-git/musicshare/blob/master/Librarybutton.JPG)
+![Librarybutton](https://github.com/emilohlund-git/musicshare/blob/master/Librarybutton.JPG)  
 Basically the lines seperating the table-cells would duplicate and stick on the screen whenever clicking on a cell in the table to open it. This problem occured when I was using the popout collapsibles by Materialize, I had to change it to the normal extendable collapsibles in order for the issue to be removed.
 
 ## Credits ##
@@ -40,7 +40,7 @@ Basically the lines seperating the table-cells would duplicate and stick on the 
 I'm using the following images taken from Pexels.com [https://www.pexels.com/].
 - From Tom Swinnen on Pexels.com (https://www.pexels.com/photo/white-earphones-beside-orange-music-player-3194469/)
 - From Soonios Pro on Pexels.com (https://www.pexels.com/photo/black-microphone-3531990/)
-The third blank image I'm using on the 'add song' and 'library' page off the website is basically the second picture with the microphone cut off only using the orange gradient colours.
+- The third blank image I'm using on the 'add song' and 'library' page off the website is basically the second picture with the microphone cut off only using the orange gradient colours.
 
 Rest is icons from Materialize which can all be found here (https://materializecss.com/icons.html)
 Hosting images on the website at [Imgbb.com](https://sv.imgbb.com/)
