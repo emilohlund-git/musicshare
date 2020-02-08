@@ -68,5 +68,11 @@ I'm using the following images taken from Pexels.com [https://www.pexels.com/].
 - From Soonios Pro on Pexels.com (https://www.pexels.com/photo/black-microphone-3531990/)
 - The third blank image I'm using on the 'add song' and 'library' page off the website is basically the second picture with the microphone cut off only using the orange gradient colours.
 
+### Code snippets ###
+For the filter function on the library page, I've used a code snippet taken from (https://www.w3schools.com/howto/howto_js_filter_table.asp)  
+
+For the sorting function based on amount of likes on a song I use a code snippet taken from (https://www.w3schools.com/howto/howto_js_sort_table.asp)
+I had to modify it to target the first span element in each row.
+
 Rest is icons from Materialize which can all be found here (https://materializecss.com/icons.html)
 Hosting images on the website at [Imgbb.com](https://sv.imgbb.com/)
