@@ -23,6 +23,7 @@ Connecting to the database using PyMongo to MongoDB.
 Otherwise it's standard CSS & Javascript
 
 ## Testing ##
-
+ 
 
 Background image provided by Pexels.com [https://www.pexels.com/@shottrotter]
+Hosting images on the website at Imgbb.com [https://sv.imgbb.com/]

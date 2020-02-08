@@ -15,8 +15,8 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="{{ url_for('home_page') }}" class="brand-logo">MUSICSHARE</a>
-                <ul class="right hide-on-med-and-down">
+                <a href="{{ url_for('home_page') }}" class="brand-logo left-align">MUSICSHARE</a>
+                <ul class="right">
                     <li><a href="{{ url_for('add_song') }}"><i class="material-icons" id="music-add">library_add</i></a>
                     </li>
                     <li><a href="{{ url_for('library') }}"><i class="material-icons"
@@ -27,13 +27,6 @@
     </header>
     {% block content %}
     {% endblock %}
-    <footer class="page-footer">
-        <div class="footer-copyright">
-            <div class="container">
-                © 2020 Emil Öhlund
-            </div>
-        </div>
-    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

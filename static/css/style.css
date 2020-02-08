@@ -13,7 +13,7 @@ body {
 
 .big-label {
   font-size: 35px !important;
-  font-weight: 800;
+  font-weight: 1200;
   text-transform: uppercase;
 }
 
@@ -24,6 +24,10 @@ input::placeholder {
 input,
 input::placeholder {
   padding-top: 25px !important;
+}
+
+input {
+  color: #fff;
 }
 
 /* label color */
@@ -329,4 +333,11 @@ ul.collapsible > li {
 
 .right-margin {
   margin-right: 10px;
+}
+
+@media only screen and (max-width: 992px) {
+  .brand-logo {
+    left: 0 !important;
+    transform: translateX(0) !important;
+  }
 }

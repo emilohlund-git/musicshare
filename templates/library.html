@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="hero flex-center"
-    style="background-image:url({{ url_for('static', filename='img/orange-background.jpg') }}); background-size: cover;">
+    style="background-image:url(https://i.ibb.co/YTDBqCm/orange-background.jpg); background-size: cover;">
     <div class="container">
         <div class="responsive-table table-status-sheet">
             <table class="bordered z-depth-0" id="library-table">
@@ -29,11 +29,11 @@
                                         <span class="hide">{{song.form_genre}}</span>
                                         {% if 'spotify' in song.form_link %}
                                         <a target="_blank" href="{{song.form_link}}" id="form-genre-span"><img
-                                                src="{{ url_for('static', filename='img/spotify-icon.png') }}"
+                                                src="https://i.ibb.co/pZHnHXy/spotify-icon.png"
                                                 style="width: 25px; height: 25px;">Open in Spotify!</a>
                                         {% elif 'youtube' in song.form_link %}
                                         <a target="_blank" href="{{song.form_link}}" id="form-genre-span"><img
-                                                src="{{ url_for('static', filename='img/youtube-icon.png') }}"
+                                                src="https://i.ibb.co/0nr76Lq/youtube-icon.png"
                                                 style="width: 20px; height: 20px; margin-left: 2px"> Play with
                                             Youtube!</a>
                                         {% else %}
@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <input id="filter" type="text" class="validate">
-                    <label for="email">Filter by artist</label>
+                    <label for="email">Filter</label>
                     <span class="helper-text" data-error="wrong">Narrow down your list with the filter!</span>
                 </div>
             </div>
